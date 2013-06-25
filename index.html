@@ -20,12 +20,17 @@
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="BlueBlinkyDancer">Blue Dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="ErectionDancer">Growing Dancer</a>
       <a href="#" class="addDancerButton" data-dancer-maker-function-name="MarcusDancer">Dancing Professor</a>
+      <a href="#" class="lineThemUp" >Form A Line</a>
     </div>
 
     <script>
       $(document).ready(function(){
         window.dancers = [];
-
+        $(".lineThemUp").on("click", function(event){
+          _.each(window.dancers, function(value){
+            value.lineUp();
+          });
+        });
         $(".addDancerButton").on("click", function(event){
           /* This function sets up the click handlers for the create-dancer
            * buttons on index.html. You should not need to alter it.
